@@ -38,4 +38,9 @@ public class SubjectServiceImpl implements SubjectService {
     public void deleteSubjectById(Long id) {
         subjectRepository.deleteById(id);
     }
+
+    @Override
+    public Optional<Subject> findById(Long id) {
+        return subjectRepository.findById(id);
+    }
 }

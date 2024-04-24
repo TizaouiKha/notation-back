@@ -1,6 +1,7 @@
 package com.example.notationback.controller;
 
 import com.example.notationback.model.Class;
+import com.example.notationback.model.Exam;
 import com.example.notationback.model.Student;
 import com.example.notationback.model.Subject;
 import com.example.notationback.service.SubjectService;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/subject")
@@ -20,6 +22,11 @@ public class SubjectController {
     @GetMapping("/all")
     public List<Subject> getAllSubjects(){
         return subjectService.getAllSubjects();
+    }
+
+    @GetMapping("/find")
+    public Optional<Subject> getById(@RequestParam Long id) {
+        return subjectService.findById(id);
     }
 
     @PostMapping("/add")

@@ -1,5 +1,6 @@
 package com.example.notationback.serviceimp;
 
+import com.example.notationback.model.Class;
 import com.example.notationback.model.Exam;
 import com.example.notationback.repository.ExamRepository;
 import com.example.notationback.service.ExamService;
@@ -13,6 +14,11 @@ import java.util.Optional;
 public class ExamServiceImpl implements ExamService {
     @Autowired
     public ExamRepository examRepository;
+
+    @Override
+    public List<Exam> getAllExams() {
+        return (List<Exam>) examRepository.findAll();
+    }
 
     @Override
     public Exam createExam(Exam exam) {
@@ -44,8 +50,5 @@ public class ExamServiceImpl implements ExamService {
          examRepository.deleteById(id);
     }
 
-    @Override
-    public List<Exam> findAll() {
-        return null;
-    }
+
 }

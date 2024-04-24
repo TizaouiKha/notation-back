@@ -21,7 +21,7 @@ public class ExamController {
 
     @GetMapping("/all")
     public List<Exam> getAllExams(){
-        return examService.findAll();
+        return examService.getAllExams();
     }
 
     @PostMapping("/add")

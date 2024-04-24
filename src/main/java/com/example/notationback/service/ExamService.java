@@ -7,6 +7,8 @@ import java.util.Optional;
 
 public interface ExamService {
 
+    List<Exam> getAllExams();
+
     Exam createExam(Exam exam);
 
     Optional<Exam> findById(Long id);
@@ -19,5 +21,4 @@ public interface ExamService {
 
     void deleteById(Long id);
 
-    List<Exam> findAll();
 }

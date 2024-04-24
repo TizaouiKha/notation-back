@@ -33,7 +33,7 @@ public class ClassController {
         return new ResponseEntity<>(classService.updateClass(c1), HttpStatus.CREATED);
     }
 
-    @GetMapping("/delete")
+    @DeleteMapping("/delete")
     public String deleteClass(@RequestParam Long id){
         classService.deleteClassById(id);
         return "Class deleted";

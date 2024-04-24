@@ -1,6 +1,7 @@
 package com.example.notationback.service;
 
 import com.example.notationback.model.Student;
+import com.example.notationback.model.Subject;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,5 +20,7 @@ public interface StudentService {
     void deleteStudentById(Long id);
 
     List<Student> getByIdClass(Long id);
+
+    List<Student> getStudentByIdClassNull();
 
 }

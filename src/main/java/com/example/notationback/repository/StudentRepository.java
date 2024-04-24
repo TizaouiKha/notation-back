@@ -13,4 +13,6 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
 
     List<Student> findByIdClass(Long id);
 
+    List<Student> findByIdClassIsNull();
+
 }

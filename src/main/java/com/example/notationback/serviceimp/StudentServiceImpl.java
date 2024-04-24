@@ -49,4 +49,9 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findByIdClass(id);
     }
 
+    @Override
+    public List<Student> getStudentByIdClassNull() {
+        return studentRepository.findByIdClassIsNull();
+    }
+
 }

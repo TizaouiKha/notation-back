@@ -25,7 +25,13 @@ public class StudentController {
     public Optional<Student> getStudentByNom(@RequestParam String nom){
         return studentService.getStudentByLastName(nom);
     }
-    @GetMapping("/find")
+
+    @GetMapping("/findByIdClassNull")
+    public List<Student> getStudentsByIdClassNull(){
+        return studentService.getStudentByIdClassNull();
+    }
+
+    @GetMapping("/findByIdClass")
     public List<Student> getStudentByIdClass(@RequestParam Long id){
         return studentService.getByIdClass(id);
     }

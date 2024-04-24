@@ -1,5 +1,6 @@
 package com.example.notationback.controller;
 
+import com.example.notationback.model.Class;
 import com.example.notationback.model.Student;
 import com.example.notationback.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +33,8 @@ public class StudentController {
     }
 
     @GetMapping("/findByIdClass")
-    public List<Student> getStudentByIdClass(@RequestParam Long id){
-        return studentService.getByIdClass(id);
+    public List<Student> getStudentByIdClass(@RequestParam Long idClass){
+        return studentService.getByIdClass(idClass);
     }
 
     @PostMapping("/add")
@@ -51,9 +52,9 @@ public class StudentController {
         return new ResponseEntity<>(studentService.updateStudent(student2), HttpStatus.CREATED);
     }
 
-    @GetMapping("/delete")
-    public String deleteStudent(@RequestParam Long id){
+    @DeleteMapping("/delete")
+    public ResponseEntity<Student> deleteStudent(@RequestParam Long id){
         studentService.deleteStudentById(id);
-        return "Delete on Student Success";
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

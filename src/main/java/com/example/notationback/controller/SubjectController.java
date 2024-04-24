@@ -34,10 +34,10 @@ public class SubjectController {
         return new ResponseEntity<>(subjectService.updateSubject(s), HttpStatus.CREATED);
     }
 
-    @GetMapping("/delete")
-    public String deleteSubject(@RequestParam Long id){
+    @DeleteMapping("/delete")
+    public ResponseEntity<Subject> deleteSubject(@RequestParam Long id){
         subjectService.deleteSubjectById(id);
-        return "Subject deleted";
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

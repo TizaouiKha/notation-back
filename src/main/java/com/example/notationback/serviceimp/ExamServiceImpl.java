@@ -43,4 +43,9 @@ public class ExamServiceImpl implements ExamService {
     public void deleteById(Long id) {
          examRepository.deleteById(id);
     }
+
+    @Override
+    public List<Exam> findAll() {
+        return null;
+    }
 }

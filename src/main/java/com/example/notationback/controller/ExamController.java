@@ -19,6 +19,10 @@ public class ExamController {
     @Autowired
     public ExamService examService;
 
+    @GetMapping("/all")
+    public List<Exam> getAllExams(){
+        return examService.findAll();
+    }
 
     @PostMapping("/add")
     public ResponseEntity<Exam> addExam(@RequestBody Exam exam){

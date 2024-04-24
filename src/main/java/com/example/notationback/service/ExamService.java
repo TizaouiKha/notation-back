@@ -18,4 +18,6 @@ public interface ExamService {
     List<Exam> findByIdSubject(Long id);
 
     void deleteById(Long id);
+
+    List<Exam> findAll();
 }

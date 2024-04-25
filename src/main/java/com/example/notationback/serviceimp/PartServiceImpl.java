@@ -1,6 +1,7 @@
 package com.example.notationback.serviceimp;
 
 import com.example.notationback.model.Part;
+import com.example.notationback.model.Student;
 import com.example.notationback.repository.PartRepository;
 import com.example.notationback.service.PartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,11 @@ public class PartServiceImpl implements PartService {
     @Override
     public Part createPart(Part part) {
         return partRepository.save(part);
+    }
+
+    @Override
+    public List<Part> getAllParts() {
+        return (List<Part>)  partRepository.findAll();
     }
 
     @Override

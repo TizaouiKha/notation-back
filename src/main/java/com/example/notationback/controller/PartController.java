@@ -2,6 +2,7 @@ package com.example.notationback.controller;
 
 import com.example.notationback.model.Class;
 import com.example.notationback.model.Part;
+import com.example.notationback.model.Student;
 import com.example.notationback.service.PartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,11 @@ import java.util.List;
 public class PartController {
     @Autowired
     public PartService partService;
+
+    @GetMapping("/all")
+    public List<Part> getAllStudents(){
+        return partService.getAllParts();
+    }
 
     @PostMapping("/add")
     public ResponseEntity<Part> addClass(@RequestBody Part part){

@@ -8,6 +8,8 @@ import java.util.Optional;
 public interface PartService {
     Part createPart(Part part);
 
+    List<Part> getAllParts();
+
     List<Part> findByIdExam(Long id);
 
     Part updatePart(Part part);

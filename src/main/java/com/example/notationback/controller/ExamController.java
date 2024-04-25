@@ -49,9 +49,9 @@ public class ExamController {
         return examService.findByIdClass(id);
     }
 
-    @GetMapping("/delete")
-    public String deleteExam(@RequestParam Long id){
+    @DeleteMapping("/delete")
+    public ResponseEntity<Exam> deleteExam(@RequestParam Long id){
         examService.deleteById(id);
-        return "Class deleted";
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
